@@ -21,7 +21,8 @@
         shell: /bin/false
         state: present
     - name: download tomcat 10.1.7
-      ansible.builtin.get_url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.7/bin/apache-tomcat-10.1.7.tar.gz
-        dest: /tmp/apache-tomcat-10.1.7.tar.gz
+      ansible.builtin.unarchive:
+        src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.7/bin/apache-tomcat-10.1.7.tar.gz
+        remote_src: yes  
+        dest: /opt/tomcat
               
